@@ -1,9 +1,19 @@
 {
-  "server-component": {
-    "welcome": "Bem Vindo"
+  "Header": {
+    "moments": "Momentos",
+    "about": "Sobre Nós",
+    "shop": "Shop",
+    "contact": "Contato"
   },
-  "counter": {
-    "increment": "Zuwachs",
-    "decrement": "Dekrementieren"
-  }
+  "Main":{
+    "title":"Bem vindo à North Kush",
+    "subtitle":"Somos exploradores da vida, entusiastas da arte urbana, surfistas da cultura SP e colecionadores de momentos — bem-vindos a North Kush, onde a paixão por viajar se mistura ao apreço pela cultura canábica em um universo de experiências únicas.",
+    "button":"Conheça a nossa história"
+  },
+  "Moments":{
+    "title":"Momentos"
+  },
+  "Shop":{},
+  "Contact":{},
+  "Footer":{}
 }

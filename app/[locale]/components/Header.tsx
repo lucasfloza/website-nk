@@ -6,6 +6,7 @@ import Link from "next/link";
 // next image
 import Image from "next/image";
 
+//React
 import React, { useEffect, useState } from "react";
 
 //icons
@@ -19,26 +20,30 @@ import {
 
 import LanguageSwitcher from "./LanguageSwitcher";
 
+// intl
+import { useTranslations } from "next-intl";
+
+
 interface Props {}
 
 let itens_menu = [
-  { id: 1, name: "About Us", url: "#about" },
-  { id: 2, name: "Shop", url: "#shop" },
-  { id: 3, name: "Moments", url: "#moments" },
-  { id: 4, name: "Contact", url: "#contact" },
+  { id: 1, name: "moments", url: "#moments" },
+  { id: 2, name: "about", url: "#about" },
+  { id: 3, name: "shop", url: "#shop" },
+  { id: 4, name: "contact", url: "#contact" },
 ];
 
 const Header: React.FC<Props> = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const [header, setHeader] = useState(false);
-  const [logo, setLogo] = useState(false);
+
+  const t = useTranslations('Header');
 
   useEffect(() => {
     const handleScroll = () => {
       // header
       if (window.scrollY > 20) {
-        setLogo(true);
         setHeader(true);
       } else {
         setHeader(false);
@@ -58,7 +63,7 @@ const Header: React.FC<Props> = () => {
     <header
       className={`${
         header ? "bg-white shadow-md " : "bg-transparent shadow-none "
-      } transition-all duration-300 fixed w-full h-24 shadow-xl z-30`}
+      } transition-all duration-300 fixed w-full h-24 shadow-xl z-50`}
     >
       <div className="flex justify-between items-center h-full w-full container mx-auto px-4 2xl:px-16">
         <Link href="/">
@@ -82,7 +87,7 @@ const Header: React.FC<Props> = () => {
                 className="ml-10 uppercase hover:underline underline-offset-2 text-xl"
                 key={item.id}
               >
-                <Link href={item.url}>{item.name}</Link>
+                <Link href={item.url}>{t(item.name)}</Link>
               </li>
             ))}
           </ul>
@@ -125,7 +130,7 @@ const Header: React.FC<Props> = () => {
                   className="py-4 hover:border-b cursor-pointer"
                   key={item.id}
                 >
-                  <Link href={item.url}>{item.name}</Link>
+                  <Link href={item.url}>{t(item.name)}</Link>
                 </li>
               ))}
             </ul>
