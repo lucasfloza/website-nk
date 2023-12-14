@@ -8,6 +8,8 @@ import "../globals.css";
 
 import { NextIntlClientProvider } from "next-intl";
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 export default async function RootLayout({
   children,
   params: { locale },
@@ -28,6 +30,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
