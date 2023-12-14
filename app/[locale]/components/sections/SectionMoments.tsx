@@ -118,7 +118,7 @@ const SectionMoments = () => {
 
                 <Link href={`${dado.link}`}>
                   <div
-                    className="w-[95%] h-[95%] bg-cover bg-center cursor-pointer relative bottom-[95%] hover:bottom-[94%] hover:left-[3.5px]  active:bottom-[94%] active:left-[7px] transition-all duration-200"
+                    className="w-[95%] h-[95%] bg-cover bg-center cursor-pointer relative bottom-[95%] hover:bottom-[94%] hover:left-[3.5px]  active:bottom-[92.8%] active:left-[7px] transition-all duration-200"
                     style={{ backgroundImage: `url(${dado.image})` }}
                   >
                     <div className="w-full h-full flex flex-col justify-end bg-white/25  hover:bg-white/50 p-5">
