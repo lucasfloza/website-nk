@@ -8,7 +8,13 @@ export default createMiddleware({
   defaultLocale: 'en'
 });
  
+// export const config = {
+//   // Match only internationalized pathnames
+//   matcher: ['/', '/(pt|en)/:path*']
+// };
+
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(pt|en)/:path*']
+  // Ignora as rotas que não devem ser internacionalizadas,
+  // como rotas para arquivos de imagem
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };
