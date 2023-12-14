@@ -8,7 +8,7 @@ const locales = ['pt', 'en'];
 
 // These styles apply to every route in the application
 import '../globals.css'
-import {unstable_setRequestLocale} from 'next-intl/server';
+// import {unstable_setRequestLocale} from 'next-intl/server';
 
 export default function RootLayout({
   children,
@@ -21,7 +21,7 @@ export default function RootLayout({
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as any)) notFound();
  
-  unstable_setRequestLocale(locale);
+  // unstable_setRequestLocale(locale);
 
   return (
     <html lang={locale}>
