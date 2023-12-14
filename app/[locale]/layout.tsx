@@ -1,40 +1,44 @@
-// import { i18n } from '../../i18n'
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
-import {notFound} from 'next/navigation';
- 
-// Can be imported from a shared config
-const locales = ['pt', 'en'];
+import { notFound } from "next/navigation";
 
-// These styles apply to every route in the application
-import '../globals.css'
-// import {unstable_setRequestLocale} from 'next-intl/server';
+const locales = ["pt", "en"];
 
-export default function RootLayout({
+import "../globals.css";
+
+import { NextIntlClientProvider } from "next-intl";
+
+export default async function RootLayout({
   children,
-  params: {locale},
+  params: { locale },
 }: {
-  children: React.ReactNode
-  params: {locale: string}
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
-
-  // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as any)) notFound();
- 
-  // unstable_setRequestLocale(locale);
+  let messages;
+  try {
+    messages = (await import(`../../dictionaries/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
 
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
-  )
+  );
 }
- 
+
 export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+  return locales.map((locale) => ({ locale }));
 }
 
 export const metadata: Metadata = {
-  title: 'North Kush',
-  description: 'North Kush Website',
-}
+  title: "North Kush",
+  icons: "/logo.png",
+  description: "North Kush Website",
+};
