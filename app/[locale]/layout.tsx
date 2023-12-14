@@ -10,6 +10,8 @@ import { NextIntlClientProvider } from "next-intl";
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+import {unstable_setRequestLocale} from 'next-intl/server';
+
 export default async function RootLayout({
   children,
   params: { locale },
@@ -23,6 +25,7 @@ export default async function RootLayout({
   } catch (error) {
     notFound();
   }
+  unstable_setRequestLocale(locale);
 
   return (
     <html lang={locale}>
