@@ -1,7 +1,12 @@
 "use client";
 
+//next
 import Link from "next/link";
+
 import Image from "next/image";
+
+//intl
+import { useTranslations } from "next-intl";
 
 let dataGrid = [
   {
@@ -97,37 +102,14 @@ let dataGrid = [
   },
 ];
 const SectionMoments = () => {
+  const t = useTranslations("Moments");
+  
   return (
     <div className="w-full">
       <div className="relative top-10">
         <h2 className="text-4xl uppercase w-full h-[200px] flex justify-center items-center">
-          Moments
+          {t("title")}
         </h2>
-        {/* grid */}
-        {/* <div className="w-full container parent grid grid-cols-4 gap-x-10 gap-y-10 py-10">
-          {dataGrid.map((data, index) => {
-            return (
-              <div
-                className={`h-[300px] row-span-1 col-span-4 md:col-span-2 ${data.style}`}
-                key={index}
-              >
-                <div className="w-[95%] h-[95%] bg-[#000000cb] relative top-[7px] left-[7px]" />
-
-                <Link href={`${data.link}`}>
-                  <div
-                    className="w-[95%] h-[95%] bg-cover bg-center cursor-pointer relative bottom-[95%] hover:bottom-[94%] hover:left-[3.5px]  active:bottom-[92.8%] active:left-[7px] transition-all duration-200"
-                    style={{ backgroundImage: `url(${data.image})` }}
-                  >
-                    <div className="w-full h-full flex flex-col justify-end bg-white/25  hover:bg-white/50 p-5">
-                      <h4 className="hover:underline text-2xl truncate underline-offset-2">{data.title}</h4>
-                      <p className="text-lg truncate">{data.description}</p>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            );
-          })}
-        </div> */}
         <div className="w-full container parent grid grid-cols-4 gap-x-10 gap-y-10 py-10">
           {dataGrid.map((data, index) => {
             return (
