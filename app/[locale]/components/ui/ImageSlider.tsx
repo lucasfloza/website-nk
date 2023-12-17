@@ -18,8 +18,8 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
   return (
     <div className="w-full h-full flex justify-center items-center">
-      <div className="w-full h-full  flex flex-row justify-center relative">
-        <div className="w-[15%]  flex justify-center items-center">
+      <div className="w-full h-full flex flex-row justify-center relative">
+        <div className="w-[15%] flex justify-center items-center">
           <button onClick={prevImage} className="px-3 py-1 focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
           </button>
         </div>
         <div className="w-[70%] h-full relative">
-          <div className="w-full h-full">
+          <div className="w-full h-full min-h-[300px]">
             <Image
               src={images[currentIndex]}
               alt=""
@@ -48,7 +48,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
             />
           </div>
         </div>
-        <div className="w-[15%]  flex justify-center items-center">
+        <div className="w-[15%] flex justify-center items-center">
           <button onClick={nextImage} className="px-3 py-1 focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
