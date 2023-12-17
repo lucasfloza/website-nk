@@ -103,26 +103,28 @@ let dataGrid = [
 ];
 const SectionMoments = () => {
   const t = useTranslations("Moments");
-  
+
   return (
-    <div className="w-full">
-      <div className="relative top-10">
+    <div className="w-full container pt-20">
+      <div>
         <h2 className="text-4xl uppercase w-full h-[200px] flex justify-center items-center">
           {t("title")}
         </h2>
-        <div className="w-full container parent grid grid-cols-4 gap-x-10 gap-y-10 py-10">
-          {dataGrid.map((data, index) => {
-            return (
-              <div
-                className={`h-[300px] row-span-1 col-span-4 md:col-span-2 ${data.style}`}
-                key={index}
-              >
-                <div className="w-[95%] h-[95%] bg-[#000000cb] relative top-[7px] left-[7px]" />
+      </div>
 
-                <Link href={`${data.link}`}>
-                  <div className="w-[95%] h-[95%] relative bottom-[95%] hover:bottom-[94%] hover:left-[3.5px]  active:bottom-[92.8%] active:left-[7px] transition-all duration-200 cursor-pointer">
+      <div className="w-full container  grid grid-cols-4 gap-x-10 gap-y-10 py-10">
+        {dataGrid.map((data, index) => {
+          return (
+            <div
+              className={`h-[300px] flex lg:block justify-center items-center bg-transparent row-span-1 col-span-4 md:col-span-2 ${data.style}`}
+              key={index}
+            >
+              <div className="relative w-full h-full bg-red-300 flex justify-center items-center">
+                <div className="hidden lg:block w-full h-full bg-[#000000cb] absolute"/>
+                <div className="w-full h-full bg-[#479ea1cb] absolute">
+                  <Link href={`${data.link}`}>
                     <div className="w-full h-full flex flex-col justify-end bg-white/25  hover:bg-white/50 p-5 relative z-30">
-                      <h4 className="hover:underline text-2xl truncate underline-offset-2">
+                      <h4 className="underline text-2xl truncate underline-offset-2">
                         {data.title}
                       </h4>
                       <p className="text-lg truncate">{data.description}</p>
@@ -132,14 +134,35 @@ const SectionMoments = () => {
                       alt={data.title}
                       loading="lazy"
                       fill
-                      className="bg-cover object-cover w-[100%] "
+                      style={{ boxShadow: " 0px 0px 50px -20px black" }}
+                      className="bg-cover object-cover w-[100%] hover:shadow-xl active:shadow-2xl transition-all duration-100"
                     />
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
-            );
-          })}
-        </div>
+
+              {/* <div className="w-[95%] h-[95%] relative lg:top-[-90%] lg:bottom-[95%] lg:hover:top-[-5%] hover:top-[3.5px] hover:left-[3.5px]  active:bottom-[92.8%] active:left-[7px] transition-all duration-200 cursor-pointer"> */}
+              {/* <div className="w-[95%] h-[95%] relative lg:bottom-[95%] lg:hover:bottom-[-5%]  hover:left-[3.5px]  active:bottom-[92.8%] active:left-[7px] transition-all duration-200 cursor-pointer">
+                <Link href={`${data.link}`}>
+                  <div className="w-full h-full flex flex-col justify-end bg-white/25  hover:bg-white/50 p-5 relative z-30">
+                    <h4 className="underline text-2xl truncate underline-offset-2">
+                      {data.title}
+                    </h4>
+                    <p className="text-lg truncate">{data.description}</p>
+                  </div>
+                  <Image
+                    src={data.image}
+                    alt={data.title}
+                    loading="lazy"
+                    fill
+                    style={{boxShadow:' 0px 0px 50px -20px black'}}
+                    className="bg-cover object-cover w-[100%] hover:shadow-xl active:shadow-2xl transition-all duration-100"
+                  />
+                </Link>
+              </div> */}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
