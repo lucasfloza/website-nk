@@ -20,6 +20,8 @@
   "Shop":{
     "title":"Shop (em breve)"
   },
-  "Contact":{},
+  "Contact":{
+    "title":"Contato"
+  },
   "Footer":{}
 }

@@ -21,8 +21,8 @@ const SectionAbout = () => {
         {t("title")}
       </h2>
 
-      <div className="w-full h-auto flex flex-col lg:flex-row bg-pink-400 justify-center items-center">
-        <div className="w-full h-full lg:w-1/2 flex justify-center items-center bg-pink-700">
+      <div className="w-full h-auto flex flex-col lg:flex-row justify-center items-center">
+        <div className="w-full h-full lg:w-1/2 flex justify-center items-center pb-5 lg:pb-0">
             <ImageSlider images={images}/>
         </div>
         <div className="w-full h-auto lg:w-1/2 lg:h-full text-center flex justify-center items-center p-10 rounded-[10px] bg-[rgba(235,234,234,0.44)]">

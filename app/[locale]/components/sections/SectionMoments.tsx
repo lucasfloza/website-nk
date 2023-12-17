@@ -119,15 +119,14 @@ const SectionMoments = () => {
               className={`h-[300px] flex lg:block justify-center items-center bg-transparent row-span-1 col-span-4 md:col-span-2 ${data.style}`}
               key={index}
             >
-              <div className="relative w-full h-full bg-red-300 flex justify-center items-center">
-                <div className="hidden lg:block w-full h-full bg-[#000000cb] absolute"/>
-                <div className="w-full h-full bg-[#479ea1cb] absolute">
+              <div className="relative w-full h-full bg-transparent flex justify-center items-center">
+                <div className="w-full h-full absolute">
                   <Link href={`${data.link}`}>
                     <div className="w-full h-full flex flex-col justify-end bg-white/25  hover:bg-white/50 p-5 relative z-30">
                       <h4 className="underline text-2xl truncate underline-offset-2">
                         {data.title}
                       </h4>
-                      <p className="text-lg truncate">{data.description}</p>
+                      <p className="text-lg truncate" title={`${data.description}`}>{data.description}</p>
                     </div>
                     <Image
                       src={data.image}
@@ -140,26 +139,6 @@ const SectionMoments = () => {
                   </Link>
                 </div>
               </div>
-
-              {/* <div className="w-[95%] h-[95%] relative lg:top-[-90%] lg:bottom-[95%] lg:hover:top-[-5%] hover:top-[3.5px] hover:left-[3.5px]  active:bottom-[92.8%] active:left-[7px] transition-all duration-200 cursor-pointer"> */}
-              {/* <div className="w-[95%] h-[95%] relative lg:bottom-[95%] lg:hover:bottom-[-5%]  hover:left-[3.5px]  active:bottom-[92.8%] active:left-[7px] transition-all duration-200 cursor-pointer">
-                <Link href={`${data.link}`}>
-                  <div className="w-full h-full flex flex-col justify-end bg-white/25  hover:bg-white/50 p-5 relative z-30">
-                    <h4 className="underline text-2xl truncate underline-offset-2">
-                      {data.title}
-                    </h4>
-                    <p className="text-lg truncate">{data.description}</p>
-                  </div>
-                  <Image
-                    src={data.image}
-                    alt={data.title}
-                    loading="lazy"
-                    fill
-                    style={{boxShadow:' 0px 0px 50px -20px black'}}
-                    className="bg-cover object-cover w-[100%] hover:shadow-xl active:shadow-2xl transition-all duration-100"
-                  />
-                </Link>
-              </div> */}
             </div>
           );
         })}

@@ -38,13 +38,14 @@ const ImageSlider = ({ images }: { images: string[] }) => {
           </button>
         </div>
         <div className="w-[70%] h-full relative">
-          <div className="w-full h-full min-h-[300px]">
+          <div className="w-full h-full min-h-[300px] lg:min-h-[700px]">
             <Image
               src={images[currentIndex]}
               alt=""
               layout="fill"
               objectFit="cover"
               className="transition-all duration-300 ease-in"
+              style={{ boxShadow: " 0px 0px 50px -20px black" }}
             />
           </div>
         </div>
