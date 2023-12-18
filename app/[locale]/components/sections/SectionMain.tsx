@@ -49,7 +49,7 @@ const SectionMain = () => {
           <FrameBoto />
         </div>
       </div>
-      <div className="relative bottom-0  w-full h-[100px] lg:h-[100px] bg-white shadow-forcast" id="moments"/>
+      <div className="relative bottom-0  w-full h-[100px] lg:h-[100px] bg-white shadow-forcast"/>
     </div>
   );
 };
