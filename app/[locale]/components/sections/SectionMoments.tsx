@@ -105,7 +105,7 @@ const SectionMoments = () => {
   const t = useTranslations("Moments");
 
   return (
-    <div className="w-full container pt-20">
+    <div className="w-full container pt-20" id="moments">
       <div>
         <h2 className="text-4xl uppercase w-full h-[200px] flex justify-center items-center">
           {t("title")}

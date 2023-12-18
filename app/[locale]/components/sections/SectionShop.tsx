@@ -1,4 +1,6 @@
 "use client";
+
+import CarouselShop from '../CarouselShop'
 //intl
 import { useTranslations } from "next-intl";
 
@@ -13,7 +15,10 @@ const SectionShop = () => {
         </h2>
       </div>
 
-      <div className="w-full h-[100vh] bg-slate-100"></div>
+      <div className="w-full h-[40vh] bg-slate-100 flex justify-center items-center">
+        {t("warning")}
+        {/* <CarouselShop /> */}
+      </div>
     </div>
   );
 };
