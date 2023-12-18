@@ -1,28 +1,23 @@
 "use client";
 
-// next link
-import Link from "next/link";
+// icons
+import {
+  AiOutlineClose,
+  AiOutlineFacebook,
+  AiOutlineInstagram,
+  AiOutlineMenu,
+  AiOutlineTwitter,
+} from "react-icons/ai";
+// React
+import React, { useEffect, useState } from "react";
 
 // next image
 import Image from "next/image";
-
-//React
-import React, { useEffect, useState } from "react";
-
-//icons
-import {
-  AiOutlineMenu,
-  AiOutlineClose,
-  AiOutlineInstagram,
-  AiOutlineFacebook,
-  AiOutlineTwitter,
-} from "react-icons/ai";
-
 import LanguageSwitcher from "./LanguageSwitcher";
-
+// next link
+import Link from "next/link";
 // intl
 import { useTranslations } from "next-intl";
-
 
 interface Props {}
 
