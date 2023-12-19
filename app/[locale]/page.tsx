@@ -20,7 +20,7 @@ export default function Home({
       <SectionMoments />
       <SectionShop />
       <SectionContact />
-      <SectionFooter />
+      {/* <SectionFooter /> */}
     </div>
   ) 
 

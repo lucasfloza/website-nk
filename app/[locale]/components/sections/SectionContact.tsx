@@ -216,7 +216,7 @@ const SectionContact = () => {
             <div className="col-span-2 row-span-1 lg:col-span-1 flex flex-col justify-start items-center">
               <FaPhone className="text-3xl"/>
               <h2 className="text-xl font-bold mb-3">Telefone</h2>
-              <p className="pb-5 lg:pb-0">Atendemos das 08:00 às 18:00</p>
+              <p className="pb-0 lg:pb-0">Atendemos das 08:00 às 18:00</p>
               <a href="tel:+5511940163239">(11) 9 9494-9494</a>
             </div>
             <div className="col-span-2 row-span-1 lg:col-span-1 flex flex-col justify-start items-center">
