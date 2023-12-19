@@ -7,7 +7,7 @@ import SectionMain from './components/sections/SectionMain'
 import SectionMoments from './components/sections/SectionMoments'
 import SectionShop from './components/sections/SectionShop'
 
-export default async function IndexPage({
+export default function Home({
   params: {locale},
 }: {
   params: {locale: string}
