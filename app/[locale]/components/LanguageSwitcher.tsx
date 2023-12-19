@@ -11,8 +11,6 @@ import { useEffect, useRef, useState } from "react";
 // } from "./ui/dropdown-menu";
 import { usePathname, useRouter } from "./navigation";
 
-import Image from "next/image";
-// import { Button } from "./ui/button";
 import { Languages } from "lucide-react";
 
 const LanguageSwitcher = () => {
@@ -21,27 +19,24 @@ const LanguageSwitcher = () => {
 
   const [open, setOpen] = useState(false);
 
-  let menuRef = useRef();
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let handler = (e)=>{
-      if(!menuRef.current.contains(e.target)){
+    const handler = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setOpen(false);
-        console.log(menuRef.current);
-      }      
+      }
     };
 
-    document.addEventListener("mousedown", handler);
-    
+    document.addEventListener('mousedown', handler);
 
-    return() =>{
-      document.removeEventListener("mousedown", handler);
-    }
-
-  });
+    return () => {
+      document.removeEventListener('mousedown', handler);
+    };
+  }, []);
 
   return (
-    <div className="right-[70px] lg:right-[0px] bottom-3 relative">
+    <div ref={menuRef} className="right-[70px] lg:right-[0px] bottom-3 relative">
       <div className='menu-container' ref={menuRef}>
         <div className='' onClick={()=>{setOpen(!open)}}>
           <Languages className="absolute  h-[25px] w-[25px] overflow-hidden cursor-pointer" />

@@ -22,10 +22,10 @@ import { useTranslations } from "next-intl";
 interface Props {}
 
 let itens_menu = [
-  { id: 1, name: "moments", url: "#moments" },
-  { id: 2, name: "about", url: "#about" },
-  { id: 3, name: "shop", url: "#shop" },
-  { id: 4, name: "contact", url: "#contact" },
+  { id: 2, name: "about", url: "/#about" },
+  { id: 1, name: "moments", url: "/#moments" },
+  { id: 3, name: "shop", url: "/#shop" },
+  { id: 4, name: "contact", url: "/#contact" },
 ];
 
 const Header: React.FC<Props> = () => {
